@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 import Dimensions from 'Dimensions';
 
 const { height, width } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
 	nav: {
 		width,
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
 		elevation: 3
 	},
 	menu: {
-		padding: 20,
+		padding: 25,
 		flex: 1
 	},
 	img: {

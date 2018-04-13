@@ -15,8 +15,6 @@ export default class Navbar extends Component {
 		};
 	}
 
-	componentDidMount = () => {};
-
 	render() {
 		const audi = '../assets/images/audi.jpg';
 
