@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { StatusBar, View, Text, ImageBackground } from 'react-native';
-import { ratings } from '../utils/_DATA';
+import { organizeRatings } from '../utils/_DATA';
 import styles from '../styles/Ratings';
 export class Ratings extends Component {
 	constructor(props) {
@@ -9,41 +9,37 @@ export class Ratings extends Component {
 		this.state = {};
 	}
 
-	componentDidMount = () => {
-		const { speed, rating, handling, text } = ratings;
+	componentWillMount() {
+		const ratings = organizeRatings();
+		ratings.map(items => items);
 
 		this.setState({
-			speed: { ...text, ...rating },
-			rating: { ...text, ...rating },
-			handling: { ...text, ...rating }
+			ratings
 		});
-	};
+	}
 
 	render() {
-		const { speed, rating, handling } = ratings;
-
+		const { ratings } = this.state;
+		console.log(ratings.map(item => item.text));
 		return (
 			<View style={styles.ratingsContainer}>
 				<View style={styles.bgRadius} />
-
-				<View style={styles.ratingsCol}>
-					<View style={styles.ratings}>
-						<Text style={styles.ratingText}>{speed.rating}</Text>
+				{ratings.map((item, index) => (
+					<View style={styles.ratingsCol} key={index}>
+						<View style={index === 1 ? styles.ratingsMid : styles.ratings}>
+							<Text
+								style={index === 1 ? styles.ratingTextMid : styles.ratingText}
+							>
+								{item.rating}
+							</Text>
+						</View>
+						<Text
+							style={index === 1 ? styles.subTextYellow : styles.subTextOrange}
+						>
+							{item.text}
+						</Text>
 					</View>
-					<Text style={styles.subTextOrange}>{speed.text}</Text>
-				</View>
-				<View style={styles.ratingsCol}>
-					<View style={styles.ratingsMid}>
-						<Text style={styles.ratingTextMid}>{rating.rating}</Text>
-					</View>
-					<Text style={styles.subTextYellow}>{rating.text}</Text>
-				</View>
-				<View style={styles.ratingsCol}>
-					<View style={styles.ratings}>
-						<Text style={styles.ratingText}>{handling.rating}</Text>
-					</View>
-					<Text style={styles.subTextOrange}>{handling.text}</Text>
-				</View>
+				))}
 			</View>
 		);
 	}

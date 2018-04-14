@@ -2,69 +2,58 @@ import React, { Component } from 'react';
 import { View, Text, Image, Dimensions, StyleSheet } from 'react-native';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import { carouselImages, organizeData } from '../utils/_DATA';
+import styles from '../styles/imageCarousel';
 const { width, height } = Dimensions.get('window');
 
 class ImageCarousel extends Component {
-  state = {};
+	state = {};
 
-  componentWillMount() {
-    const data = organizeData();
-    const images = data.map(items => items.img);
-    const dynamicText = data.map(items => items.dynamicText);
+	componentWillMount() {
+		const data = organizeData();
+		// const images = data.map(items => items.img);
+		// const dynamicText = data.map(items => items.dynamicText);
 
-    this.setState(() => ({
-      images,
-      dynamicText
-    }));
-  }
+		data.map(items => items);
 
-  _renderItem({ item, index }, parallaxProps) {
-    return (
-      <View style={styles.imageContainer}>
-        <ParallaxImage
-          source={item}
-          containerStyle={styles.imageContainer}
-          style={styles.image}
-          fadeDuration={600}
-          parallaxFactor={0.8}
-          {...parallaxProps}
-        />
-        <Text>{item.text}</Text>
-      </View>
-    );
-  }
+		this.setState(() => ({
+			data
+		}));
+	}
 
-  render() {
-    const { images } = this.state;
-    console.log(images);
-    return (
-      <Carousel
-        data={images}
-        firstItem={2}
-        renderItem={this._renderItem}
-        hasParallaxImages={true}
-        sliderWidth={width}
-        itemWidth={width / 1.2}
-        itemHeight={height / 1.2}
-      />
-    );
-  }
+	_renderItem({ item, index }, parallaxProps) {
+		return (
+			<View style={styles.imageContainer}>
+				<ParallaxImage
+					source={item.img}
+					containerStyle={styles.imageContainer}
+					style={styles.image}
+					fadeDuration={600}
+					parallaxFactor={0.8}
+					{...parallaxProps}
+				/>
+				<View style={styles.textContainer}>
+					<Text style={styles.caption}>{item.dynamicText}</Text>
+				</View>
+			</View>
+		);
+	}
+
+	render() {
+		const { data } = this.state;
+		console.log(data);
+
+		return (
+			<Carousel
+				data={data}
+				firstItem={2}
+				renderItem={this._renderItem}
+				hasParallaxImages={true}
+				sliderWidth={width}
+				itemWidth={width / 1.2}
+				itemHeight={height / 1.2}
+			/>
+		);
+	}
 }
-
-const styles = StyleSheet.create({
-  imageContainer: {
-    flexGrow: 0,
-    width: width / 1.2,
-    height: width / 2,
-    borderRadius: 30
-  },
-  image: {
-    marginTop: 20,
-    width: width / 10,
-    resizeMode: 'contain',
-    height: width / 10,
-    borderRadius: 30
-  }
-});
 
 export default ImageCarousel;

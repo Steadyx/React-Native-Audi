@@ -1,66 +1,36 @@
-export const ratings = {
+const ratings = {
 	speed: {
-		id: 1,
 		rating: '9/10',
 		text: 'Speed'
 	},
 	rating: {
-		id: 2,
 		rating: '5',
 		text: 'Rating'
 	},
 	handling: {
-		id: 3,
 		rating: '6/10',
 		text: 'Handling'
 	}
 };
 
-export const carouselImages = {
+const carouselImages = {
 	img1: {
 		img: require('../assets/images/audi-slider-1.jpg'),
-		dynamicText: 'dynamic text'
+		dynamicText: 'S1'
 	},
 	img2: {
 		img: require('../assets/images/audi-slider-2.jpeg'),
-		dynamicText: 'dynamic text'
+		dynamicText: 'S2'
 	},
 	img3: {
 		img: require('../assets/images/audi-slider-3.jpg'),
-		dynamicText: 'dynamic text'
+		dynamicText: 'S3'
 	},
 	img4: {
 		img: require('../assets/images/audi-slider-4.jpeg'),
-		dynamicText: 'dynamic text'
+		dynamicText: 'S4'
 	}
 };
-
-export const posts = [
-	{
-		id: 1,
-		title: 'Strong Cornering',
-		paragraph:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit itaque rerum magni earum, ipsa quam, autem atque doloremque rem molestias maxime! Iure harum, quasi fuga neque voluptates iusto aspernatur!'
-	},
-	{
-		id: 2,
-		title: 'Strong Cornering',
-		paragraph:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit itaque rerum magni earum, ipsa quam, autem atque doloremque rem molestias maxime! Iure harum, quasi fuga neque voluptates iusto aspernatur!'
-	},
-	{
-		id: 3,
-		title: 'Strong Cornering',
-		paragraph:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit itaque rerum magni earum, ipsa quam, autem atque doloremque rem molestias maxime! Iure harum, quasi fuga neque voluptates iusto aspernatur!'
-	},
-	{
-		id: 4,
-		title: 'Strong Cornering',
-		paragraph:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit itaque rerum magni earum, ipsa quam, autem atque doloremque rem molestias maxime! Iure harum, quasi fuga neque voluptates iusto aspernatur!'
-	}
-];
 
 const listItems = {
 	list1: {
@@ -77,8 +47,10 @@ const listItems = {
 	}
 };
 
-export function _getRatings() {
-	return { ...ratings };
+export function organizeRatings() {
+	return Object.keys(ratings).map(rating => {
+		return ratings[rating];
+	});
 }
 
 export function organizeData() {

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 				shadowRadius: 1
 			},
 			android: {
-				elevation: 1
+				elevation: 6
 			}
 		}),
 		borderRadius: 5
