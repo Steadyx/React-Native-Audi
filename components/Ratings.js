@@ -3,57 +3,57 @@ import { StatusBar, View, Text, ImageBackground } from 'react-native';
 import { organizeRatings } from '../utils/_DATA';
 import styles from '../styles/Ratings';
 export class Ratings extends Component {
-	constructor(props) {
-		super();
+  constructor(props) {
+    super();
 
-		this.state = {};
-	}
+    this.state = {};
+  }
 
-	componentWillMount() {
-		const ratings = organizeRatings();
-		ratings.map(items => items);
+  componentWillMount() {
+    const ratings = organizeRatings();
+    ratings.map(items => items);
 
-		this.setState({
-			ratings
-		});
-	}
+    this.setState({
+      ratings
+    });
+  }
 
-	render() {
-		const { ratings } = this.state;
+  render() {
+    const { ratings } = this.state;
 
-		return (
-			<View style={styles.ratingsContainer}>
-				<View style={styles.bgRadius} />
-				{ratings.map((item, index) => (
-					<View
-						style={
-							index === 1
-								? {
-										height: 140,
-										justifyContent: 'flex-start',
-										zIndex: 6000
-								  }
-								: styles.ratingsCol
-						}
-						key={index}
-					>
-						<View style={index === 1 ? styles.ratingsMid : styles.ratings}>
-							<Text
-								style={index === 1 ? styles.ratingTextMid : styles.ratingText}
-							>
-								{item.rating}
-							</Text>
-						</View>
-						<Text
-							style={index === 1 ? styles.subTextYellow : styles.subTextOrange}
-						>
-							{item.text.toUpperCase()}
-						</Text>
-					</View>
-				))}
-			</View>
-		);
-	}
+    return (
+      <View style={styles.ratingsContainer}>
+        <View style={styles.bgRadius} />
+        {ratings.map((item, index) => (
+          <View
+            style={
+              index === 1
+                ? {
+                    height: 140,
+                    justifyContent: 'flex-start',
+                    zIndex: 6000
+                  }
+                : styles.ratingsCol
+            }
+            key={index}
+          >
+            <View style={index === 1 ? styles.ratingsMid : styles.ratings}>
+              <Text
+                style={index === 1 ? styles.ratingTextMid : styles.ratingText}
+              >
+                {item.rating}
+              </Text>
+            </View>
+            <Text
+              style={index === 1 ? styles.subTextYellow : styles.subTextOrange}
+            >
+              {item.text.toUpperCase()}
+            </Text>
+          </View>
+        ))}
+      </View>
+    );
+  }
 }
 
 export default Ratings;
