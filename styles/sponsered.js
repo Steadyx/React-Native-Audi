@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 		borderRadius: 30,
 		paddingVertical: 10,
 		paddingHorizontal: 40,
-		marginTop: 70
+		marginTop: 80
 	},
 	row: {
 		flexDirection: 'row',
