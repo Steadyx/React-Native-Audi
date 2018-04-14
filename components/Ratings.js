@@ -3,48 +3,50 @@ import { StatusBar, View, Text, ImageBackground } from 'react-native';
 import { ratings } from '../utils/_DATA';
 import styles from '../styles/Ratings';
 export class Ratings extends Component {
-  constructor(props) {
-    super();
+	constructor(props) {
+		super();
 
-    this.state = {};
-  }
+		this.state = {};
+	}
 
-  componentDidMount = () => {
-    const { speed, rating, handling, text } = ratings;
+	componentDidMount = () => {
+		const { speed, rating, handling, text } = ratings;
 
-    this.setState({
-      speed: { ...text, ...rating },
-      rating: { ...text, ...rating },
-      handling: { ...text, ...rating }
-    });
-  };
+		this.setState({
+			speed: { ...text, ...rating },
+			rating: { ...text, ...rating },
+			handling: { ...text, ...rating }
+		});
+	};
 
-  render() {
-    const { speed, rating, handling } = ratings;
+	render() {
+		const { speed, rating, handling } = ratings;
 
-    return (
-      <View style={styles.ratingsContainer}>
-        <View style={styles.ratingsCol}>
-          <View style={styles.ratings}>
-            <Text style={styles.ratingText}>{speed.rating}</Text>
-          </View>
-          <Text style={styles.subTextOrange}>{speed.text}</Text>
-        </View>
-        <View style={styles.ratingsCol}>
-          <View style={styles.ratingsMid}>
-            <Text style={styles.ratingTextMid}>{rating.rating}</Text>
-          </View>
-          <Text style={styles.subTextYellow}>{rating.text}</Text>
-        </View>
-        <View style={styles.ratingsCol}>
-          <View style={styles.ratings}>
-            <Text style={styles.ratingText}>{handling.rating}</Text>
-          </View>
-          <Text style={styles.subTextOrange}>{handling.text}</Text>
-        </View>
-      </View>
-    );
-  }
+		return (
+			<View style={styles.ratingsContainer}>
+				<View style={styles.bgRadius} />
+
+				<View style={styles.ratingsCol}>
+					<View style={styles.ratings}>
+						<Text style={styles.ratingText}>{speed.rating}</Text>
+					</View>
+					<Text style={styles.subTextOrange}>{speed.text}</Text>
+				</View>
+				<View style={styles.ratingsCol}>
+					<View style={styles.ratingsMid}>
+						<Text style={styles.ratingTextMid}>{rating.rating}</Text>
+					</View>
+					<Text style={styles.subTextYellow}>{rating.text}</Text>
+				</View>
+				<View style={styles.ratingsCol}>
+					<View style={styles.ratings}>
+						<Text style={styles.ratingText}>{handling.rating}</Text>
+					</View>
+					<Text style={styles.subTextOrange}>{handling.text}</Text>
+				</View>
+			</View>
+		);
+	}
 }
 
 export default Ratings;

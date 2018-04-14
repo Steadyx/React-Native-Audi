@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
 		position: 'absolute'
 	},
 	linear_gradient: {
-		width,
-		height,
+		width: '100%',
+		height: '100%',
 		alignItems: 'center',
 		position: 'absolute',
 		left: 0,
