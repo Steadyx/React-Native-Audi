@@ -5,7 +5,7 @@ const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
 	nav: {
 		width,
-		height: height / 3.3,
+		height: height / 3.2,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'flex-start',
@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
 		elevation: 3
 	},
 	menu: {
-		padding: 25,
+		paddingVertical: 40,
+		paddingHorizontal: 20,
 		flex: 1
 	},
 	img: {
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
 		top: 0
 	},
 	heading: {
-		height: height / 5.5,
+		height: height / 4,
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'space-around'

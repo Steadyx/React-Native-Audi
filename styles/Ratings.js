@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 		alignItems: 'center',
-		height: 130,
+		height: 150,
 		backgroundColor: 'transparent',
 		width,
 		overflow: 'hidden',
@@ -21,19 +21,19 @@ const styles = StyleSheet.create({
 		position: 'absolute',
 		width: '100%',
 		height: 200,
-		top: 20,
+		top: 55,
 		left: 0,
 		backgroundColor: '#FFFFFF',
 		zIndex: 100,
-		borderTopLeftRadius: 50,
-		borderTopRightRadius: 50
+		borderTopLeftRadius: 30,
+		borderTopRightRadius: 30
 	},
 	ratingsCol: {
 		alignItems: 'center',
-		justifyContent: 'flex-start',
+		justifyContent: 'center',
 		top: 0,
 		zIndex: 9000,
-		height: 120
+		height: 160
 	},
 	ratings: {
 		backgroundColor: colOrange,
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
 	},
 	ratingsMid: {
 		backgroundColor: colYellow,
-		width: 80,
+		width: 100,
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: 80,
-		borderRadius: 80 / 2,
+		height: 100,
+		borderRadius: 100 / 2,
 		zIndex: 900000,
 		shadowColor: '#000000',
 		shadowOpacity: 0.8,
