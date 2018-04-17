@@ -5,7 +5,7 @@ const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   nav: {
     width,
-    height: height / 2.65,
+    height: height / 2.8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'
