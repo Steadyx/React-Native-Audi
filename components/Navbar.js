@@ -7,17 +7,15 @@ import { Feather } from '@expo/vector-icons';
 import styles from '../styles/NavStyles';
 
 export default class Navbar extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
-    this.state = {
-      data: []
-    };
+    this.state = {};
   }
 
   render() {
     const audi = '../assets/images/audi.jpg';
-
+    console.log(this.props);
     return (
       <View style={styles.nav}>
         <ImageBackground source={require(audi)} style={styles.img}>

@@ -24,33 +24,37 @@ export class Ratings extends Component {
     return (
       <View style={styles.ratingsContainer}>
         <View style={styles.bgRadius} />
-        {ratings.map((item, index) => (
-          <View
-            style={
-              index === 1
-                ? {
-                    height: 140,
-                    justifyContent: 'flex-start',
-                    zIndex: 6000
-                  }
-                : styles.ratingsCol
-            }
-            key={index}
-          >
-            <View style={index === 1 ? styles.ratingsMid : styles.ratings}>
+        <View style={styles.row}>
+          {ratings.map((item, index) => (
+            <View
+              style={
+                index === 1
+                  ? {
+                      height: 135,
+                      justifyContent: 'flex-start',
+                      zIndex: 6000
+                    }
+                  : styles.ratingsCol
+              }
+              key={index}
+            >
+              <View style={index === 1 ? styles.ratingsMid : styles.ratings}>
+                <Text
+                  style={index === 1 ? styles.ratingTextMid : styles.ratingText}
+                >
+                  {item.rating}
+                </Text>
+              </View>
               <Text
-                style={index === 1 ? styles.ratingTextMid : styles.ratingText}
+                style={
+                  index === 1 ? styles.subTextYellow : styles.subTextOrange
+                }
               >
-                {item.rating}
+                {item.text.toUpperCase()}
               </Text>
             </View>
-            <Text
-              style={index === 1 ? styles.subTextYellow : styles.subTextOrange}
-            >
-              {item.text.toUpperCase()}
-            </Text>
-          </View>
-        ))}
+          ))}
+        </View>
       </View>
     );
   }

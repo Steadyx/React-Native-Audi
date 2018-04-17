@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { View, Text, Image, Dimensions, StyleSheet } from 'react-native';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import { carouselImages, organizeData } from '../utils/_DATA';
@@ -10,9 +10,6 @@ class ImageCarousel extends Component {
 
   componentWillMount() {
     const data = organizeData();
-    // const images = data.map(items => items.img);
-    // const dynamicText = data.map(items => items.dynamicText);
-
     data.map(items => items);
 
     this.setState(() => ({
@@ -22,7 +19,7 @@ class ImageCarousel extends Component {
 
   _renderItem({ item, index }, parallaxProps) {
     return (
-      <View style={styles.imageContainer}>
+      <Fragment>
         <ParallaxImage
           source={item.img}
           containerStyle={styles.imageContainer}
@@ -34,23 +31,30 @@ class ImageCarousel extends Component {
         <View style={styles.textContainer}>
           <Text style={styles.caption}>{item.dynamicText}</Text>
         </View>
-      </View>
+      </Fragment>
     );
   }
 
   render() {
     const { data } = this.state;
-    console.log(data);
-
+    console.log(this.state);
     return (
       <Carousel
         data={data}
         firstItem={2}
         renderItem={this._renderItem}
         hasParallaxImages={true}
+        activeSlideAlignment="center"
         sliderWidth={width}
-        itemWidth={width / 1.2}
+        itemWidth={width / 1.3}
         itemHeight={height / 1.2}
+        containerStyle={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          flex: 1
+        }}
+        slideStyle={{ flex: 1 }}
       />
     );
   }

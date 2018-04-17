@@ -35,15 +35,18 @@ const carouselImages = {
 const listItems = {
   list1: {
     title: 'Strong Cornering',
-    content: 'Lorem sit amet consectetur elit.'
+    content:
+      'Lorem sit amet consectetur elit. Lorem sit amet consectetur elit. Lorem sit amet consectetur elit.'
   },
   list2: {
     title: 'Weak Steering',
-    content: 'Lorem sit amet consectetur elit.'
+    content:
+      'Lorem sit amet consectetur elit. Lorem sit amet consectetur elit. Lorem sit amet consectetur elit.'
   },
   list3: {
     title: 'Presitge',
-    content: 'Lorem sit amet consectetur elit.'
+    content:
+      'Lorem sit amet consectetur elit. Lorem sit amet consectetur elit. Lorem sit amet consectetur elit.'
   }
 };
 
@@ -64,23 +67,3 @@ export function oraganizeListItems() {
     return listItems[items];
   });
 }
-
-// export function formattedRatings(ratings) {
-// 	return Object.keys(ratings).reduce((formattedRatings, id) => {
-// 		const rating = ratings[id];
-
-// 		formattedRatings[id] = {
-// 			...rating,
-// 			rating: Object.keys(rating.rating),
-// 			text: Object.keys(rating.text)
-// 		};
-
-// 		return formattedRatings;
-// 	}, {});
-// }
-
-// export function getInitialData() {
-// 	return Promise.all([_getRatings()]).then(([ratings]) => ({
-// 		ratings: formattedRatings(ratings)
-// 	}));
-// }

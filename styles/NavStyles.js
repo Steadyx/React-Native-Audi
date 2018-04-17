@@ -5,15 +5,10 @@ const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   nav: {
     width,
-    height: height / 3.2,
+    height: height / 2.65,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    elevation: 3
+    alignItems: 'flex-start'
   },
   menu: {
     paddingVertical: 40,
@@ -44,7 +39,8 @@ const styles = StyleSheet.create({
   text: {
     alignSelf: 'center',
     color: '#FFFFFF',
-    fontSize: 70
+    fontSize: 70,
+    fontFamily: 'poppins'
   }
 });
 

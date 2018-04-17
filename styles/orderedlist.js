@@ -27,20 +27,30 @@ const styles = StyleSheet.create({
   heading: {
     color: '#DF612A',
     fontWeight: '600',
-    fontSize: 30
+    ...Platform.select({
+      ios: {
+        fontSize: 26
+      },
+      android: {
+        fontSize: width / 13
+      }
+    }),
+    fontFamily: 'poppinsBold'
   },
   bullet: {
     backgroundColor: '#DF612A',
     alignItems: 'flex-start'
   },
   paragraph: {
-    fontSize: 22
+    fontSize: 22,
+    fontFamily: 'poppinsBold'
   },
   bulletFont: {
     color: 'white',
     fontSize: 60,
     fontWeight: '800',
-    textAlign: 'left'
+    textAlign: 'left',
+    fontFamily: 'poppinsBold'
   },
   card: {
     backgroundColor: '#E49835',
@@ -56,7 +66,8 @@ const styles = StyleSheet.create({
         shadowRadius: 1
       },
       android: {
-        elevation: 6
+        elevation: 3,
+        shadowRadius: 2
       }
     }),
     borderRadius: 5
@@ -64,15 +75,18 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontSize: 26,
     fontWeight: '800',
-    color: '#A5661F'
+    color: '#A5661F',
+    fontFamily: 'poppinsBold'
   },
   cardParagraph: {
     color: '#FFFFFF',
     fontSize: 18,
-    fontWeight: '800'
+    fontWeight: '800',
+    textAlign: 'left',
+    fontFamily: 'poppinsBold'
   },
   col: {
-    width: '90%',
+    width: '85%',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -86,7 +100,8 @@ const styles = StyleSheet.create({
   },
   colParagraph: {
     justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    fontFamily: 'poppins'
   }
 });
 

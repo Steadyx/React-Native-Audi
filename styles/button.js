@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
@@ -6,39 +6,44 @@ const styles = StyleSheet.create({
   row: {
     width,
     justifyContent: 'center',
-    alignItems: 'center',
-    borderTopLeftRadius: 300,
-    borderTopRightRadius: 300
+    alignItems: 'center'
   },
   col: {
     width,
+    height: 60,
     justifyContent: 'center',
     alignItems: 'center',
-    borderTopLeftRadius: 300,
-    borderTopRightRadius: 300,
+    ...Platform.select({
+      ios: {
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30
+      },
+      android: {
+        borderTopLeftRadius: 40,
+        borderTopRightRadius: 40
+      }
+    }),
+
     overflow: 'hidden'
   },
   button: {
     width,
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
-    borderTopLeftRadius: 300,
-    borderTopRightRadius: 300
+    position: 'relative'
   },
   btnFont: {
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: '800',
     color: '#FFFFFF',
-    paddingBottom: 10
+    paddingBottom: 10,
+    fontFamily: 'poppinsExtraBold'
   },
 
   linear_gradient: {
-    width,
-    height: width / 6,
+    width: '100%',
+    height: '100%',
     position: 'absolute',
-    borderTopLeftRadius: 300,
-    borderTopRightRadius: 300,
     top: 0,
     left: 0
   }

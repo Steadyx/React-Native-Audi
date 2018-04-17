@@ -3,17 +3,16 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   imageContainer: {
-    flexGrow: 0,
-    width: width / 1.2,
+    flexGrow: 1,
+    width: '95%',
     height: width / 2,
-    borderRadius: 30
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 40
   },
   image: {
-    marginTop: 20,
-    width: width / 10,
-    resizeMode: 'contain',
-    height: width / 10,
-    borderRadius: 30
+    width: width,
+    resizeMode: 'contain'
   },
   textContainer: {
     position: 'absolute',
@@ -25,10 +24,11 @@ const styles = StyleSheet.create({
   caption: {
     fontSize: 40,
     color: '#FFFFFF',
-    paddingHorizontal: 30,
+    paddingHorizontal: 40,
     paddingVertical: 20,
     fontWeight: '800',
     elevation: 3,
+    fontFamily: 'poppins',
     textShadowColor: 'rgba(0, 0, 0, 0.4)',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 5

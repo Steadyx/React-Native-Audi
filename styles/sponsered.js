@@ -6,28 +6,34 @@ const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: '#F7F7F7',
     borderRadius: 30,
-    paddingVertical: 10,
+    paddingVertical: 20,
     paddingHorizontal: 40,
-    marginTop: 80
+    marginTop: 20,
+    marginBottom: 20
   },
   row: {
     flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
+    width: '48%',
+    justifyContent: 'center',
+    alignItems: 'flex-start'
   },
   col: {
-    margin: 5
+    margin: 2,
+    marginBottom: 10
   },
   subText: {
-    fontSize: 8,
-    color: '#8A8A8A'
+    fontSize: 10,
+    color: '#8A8A8A',
+    fontFamily: 'poppins'
   },
   name: {
-    fontWeight: '800'
+    fontFamily: 'poppinsExtraBold'
   },
   paragraph: {
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: 13,
+    fontFamily: 'poppinsLight',
+    fontWeight: '200'
   }
 });
 

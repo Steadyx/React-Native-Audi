@@ -1,33 +1,39 @@
 {
-	"name": "react-native-test",
-	"version": "0.1.0",
-	"private": true,
-	"devDependencies": {
-		"jest-expo": "26.0.0",
-		"react-native-scripts": "1.13.1",
-		"react-test-renderer": "16.3.0-alpha.1"
-	},
-	"main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
-	"scripts": {
-		"start": "react-native-scripts start",
-		"eject": "react-native-scripts eject",
-		"android": "react-native-scripts android",
-		"ios": "react-native-scripts ios",
-		"test": "jest",
-		"debug": "open rndebugger://set-debugger-loc?host=localhost&port=19001"
-	},
-	"jest": {
-		"preset": "jest-expo"
-	},
-	"dependencies": {
-		"@expo/vector-icons": "^6.3.1",
-		"expo": "^26.0.0",
-		"native-base": "^2.4.1",
-		"prop-types": "^15.6.1",
-		"react": "16.3.0-alpha.1",
-		"react-native": "0.54.0",
-		"react-native-snap-carousel": "^3.6.0",
-		"react-router-dom": "^4.2.2",
-		"react-router-native": "^4.2.0"
-	}
+  "name": "react-native-test",
+  "version": "0.1.0",
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
+  },
+  "private": true,
+  "devDependencies": {
+    "jest-expo": "26.0.0",
+    "react-native-scripts": "1.13.1",
+    "react-test-renderer": "16.3.0-alpha.1"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "jest",
+    "debug": "open rndebugger://set-debugger-loc?host=localhost&port=19001"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
+    "expo": "^26.0.0",
+    "native-base": "^2.4.1",
+    "prop-types": "^15.6.1",
+    "react": "16.3.0-alpha.1",
+    "react-native": "0.54.0",
+    "react-native-dash": "^0.0.8",
+    "react-native-snap-carousel": "^3.6.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-native": "^4.2.0"
+  }
 }

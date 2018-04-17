@@ -19,14 +19,21 @@ const styles = StyleSheet.create({
   },
   bgRadius: {
     position: 'absolute',
-    width: '100%',
-    height: 200,
-    top: 55,
+    width: width,
+    height: width / 6,
+    top: width / 7,
     left: 0,
     backgroundColor: '#FFFFFF',
     zIndex: 100,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30
+    borderTopLeftRadius: 420,
+    borderTopRightRadius: 420
+  },
+  row: {
+    width: '80%',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    zIndex: 100000
   },
   ratingsCol: {
     alignItems: 'center',
@@ -37,12 +44,12 @@ const styles = StyleSheet.create({
   },
   ratings: {
     backgroundColor: colOrange,
-    width: 80,
+    width: 70,
     alignItems: 'center',
     justifyContent: 'space-around',
-    height: 80,
+    height: 70,
     zIndex: 60000,
-    borderRadius: 80 / 2,
+    borderRadius: 70 / 2,
     shadowColor: '#000000',
     shadowOpacity: 0.3,
     shadowRadius: 2,
@@ -50,11 +57,11 @@ const styles = StyleSheet.create({
   },
   ratingsMid: {
     backgroundColor: colYellow,
-    width: 100,
+    width: 90,
     alignItems: 'center',
     justifyContent: 'center',
-    height: 100,
-    borderRadius: 100 / 2,
+    height: 90,
+    borderRadius: 90 / 2,
     zIndex: 900000,
     shadowColor: '#000000',
     shadowOpacity: 0.8,
@@ -63,26 +70,34 @@ const styles = StyleSheet.create({
   },
   ratingText: {
     color: '#FFFFFF',
+    fontWeight: '800',
     fontSize: 30,
+    fontFamily: 'poppinsBoldItallic',
     textAlign: 'center'
   },
   ratingTextMid: {
     color: '#FFFFFF',
-    fontSize: 60,
+    fontSize: 70,
+    fontFamily: 'poppinsBoldItallic',
+
     fontWeight: '800',
     textAlign: 'center'
   },
   subTextOrange: {
+    marginTop: 5,
     textAlign: 'center',
     color: colOrange,
-    fontWeight: '600',
-    fontSize: 18
+    fontWeight: '900',
+    fontFamily: 'poppinsBoldItallic',
+    fontSize: 14
   },
   subTextYellow: {
+    marginTop: 5,
     textAlign: 'center',
     color: colYellow,
-    fontWeight: '600',
-    fontSize: 18
+    fontWeight: '900',
+    fontFamily: 'poppinsBoldItallic',
+    fontSize: 14
   }
 });
 

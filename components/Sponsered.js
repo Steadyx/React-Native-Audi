@@ -10,7 +10,13 @@ class Sponsered extends Component {
           <View style={styles.col}>
             <Image
               source={{ uri: 'http://via.placeholder.com/100x100' }}
-              style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
+              style={{
+                width: 25,
+                height: 25,
+                borderRadius: 25 / 2,
+                borderWidth: 1,
+                borderColor: '#FFFFFF'
+              }}
             />
           </View>
           <View style={styles.col}>
