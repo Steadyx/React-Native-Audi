@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,8 +8,16 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingVertical: 20,
     paddingHorizontal: 40,
-    marginTop: 20,
-    marginBottom: 20
+    ...Platform.select({
+      ios: {
+        marginTop: 40,
+        marginBottom: 20
+      },
+      android: {
+        marginTop: 20,
+        marginBottom: 20
+      }
+    })
   },
   row: {
     flexDirection: 'row',

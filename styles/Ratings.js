@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform } from 'react-native';
 
 const colOrange = '#E16E35';
 const colYellow = '#ECBE4D';
@@ -9,7 +9,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: 150,
+    ...Platform.select({
+      ios: {
+        height: 230
+      },
+      android: {
+        height: 150
+      }
+    }),
     backgroundColor: 'transparent',
     width,
     overflow: 'hidden',
@@ -19,14 +26,28 @@ const styles = StyleSheet.create({
   },
   bgRadius: {
     position: 'absolute',
-    width: width,
-    height: width / 6,
-    top: width / 7,
-    left: 0,
-    backgroundColor: '#FFFFFF',
-    zIndex: 100,
-    borderTopLeftRadius: 420,
-    borderTopRightRadius: 420
+    ...Platform.select({
+      android: {
+        width: width,
+        height: width / 6,
+        top: width / 7,
+        left: 0,
+        backgroundColor: '#FFFFFF',
+        zIndex: 100,
+        borderTopLeftRadius: 420,
+        borderTopRightRadius: 420
+      },
+      ios: {
+        width: width,
+        height: width / 6,
+        top: width / 4,
+        left: 0,
+        backgroundColor: '#FFFFFF',
+        zIndex: 100,
+        borderTopLeftRadius: 420,
+        borderTopRightRadius: 420
+      }
+    })
   },
   row: {
     width: '80%',
